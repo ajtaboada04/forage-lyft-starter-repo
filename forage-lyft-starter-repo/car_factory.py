@@ -15,34 +15,35 @@ class CarFactory:
     
     @staticmethod
     def create_calliope(current_date, last_service_date, current_milage, last_service_milage):
-        engine = CapuletEngine()
-        battery = SpindlerBattery()
+        engine = CapuletEngine(current_milage, last_service_milage)
+        battery = SpindlerBattery(current_date, last_service_date)
         car = Car(engine, battery)
         return car
     
     @staticmethod
     def create_glissade(current_date, last_service_date, current_milage, last_service_milage):
-        engine = WilloughbyEngine()
-        battery = SpindlerBattery()
+        engine = WilloughbyEngine(current_milage, last_service_milage)
+        battery = SpindlerBattery(current_date, last_service_date)
         car = Car(engine, battery)
         return car
 
     @staticmethod
-    def create_palindrome(current_date, last_service_date, current_milage, last_service_milage):
-        engine = SternmanEngine()
-        battery = SpindlerBattery()
+    def create_palindrome(current_date, last_service_date, warning_light_is_on):
+        engine = SternmanEngine(warning_light_is_on)
+        battery = SpindlerBattery(current_date, last_service_date)
         car = Car(engine, battery)
         return car
     
     @staticmethod
     def create_rorschach(current_date, last_service_date, current_milage, last_service_milage):
-        engine = WilloughbyEngine()
-        battery = NubbinBattery()
+        engine = WilloughbyEngine(current_milage, last_service_milage)
+        battery = NubbinBattery(current_date, last_service_date)
         car = Car(engine, battery)
         return car
     
+    @staticmethod
     def create_thovex(current_date, last_service_date, current_milage, last_service_milage):
-        engine = CapuletEngine()
-        battery = NubbinBattery()
+        engine = CapuletEngine(current_milage, last_service_milage)
+        battery = NubbinBattery(current_date, last_service_date)
         car = Car(engine, battery)
         return car
